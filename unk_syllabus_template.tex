@@ -1,0 +1,346 @@
+% 7 Aug 2024
+%++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+% Summary  : Syllabus template, based on that by James Quinlan, Great State University
+%						 : Also based on a LATEX template by Arman Shokrollahi
+%						 : Jacob C. Cooper
+%						 : University of Nebraska at Kearney
+%						 : Creative Commons License; free use, replication, and alteration
+%						 : NOTE creative commons for template, content is copyrighted in this version!
+%++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+%%%%%% INFO FOR EACH SYLLABUS %%%%%
+
+%%% Professor information
+\newcommand{\profname}{Mr. John Ross}
+\newcommand{\shortname}{Mr. Ross}
+\newcommand{\proftitle}{Position Title}
+\newcommand{\office}{BHS ???}
+\newcommand{\phone}{\href{tel:13085555555}{(555)-555-5555}}
+\newcommand{\email}{\href{mailto:anonymous@unk.edu}{anonymous@unk.edu}}
+
+%%% Class information
+\newcommand{\coursenamelong}{Biol NUM: Course Name}
+\newcommand{\coursenum}{BIOL NUM}
+\newcommand{\classroom}{BHS NUM}
+\newcommand{\buildingname}{Full Building Name}
+\newcommand{\coursename}{Short name for course}
+\newcommand{\semester}{Semester YEAR}
+\newcommand{\longdays}{DAYS OF WEEK} % days written out
+\newcommand{\classdays}{DAYS OF WK.} % abbreviations
+
+%%% semester start date
+%%% FIRST MONDAY OF SEMESTER
+%%% presently formatted for the first Monday of the semester
+\newcommand{\startdate}{26/08/2024}
+
+%%% Commands that should be the same for each document
+%%% Canvas link
+\newcommand{\canvas}{\href{https://canvas.unk.edu/}{Canvas}}
+%%% formatting link for spacing
+\newcommand{\skippers}{\vskip.1in}
+% TIMES MUST BE ADJUSTED IN DOCUMENT
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% not all packages are probably required, but having more here to prevent formatting issues
+
+\documentclass[11pt]{article}
+\usepackage[inner=1in,outer=1in,top=1in,bottom=1in]{geometry}
+\pagestyle{empty}
+\usepackage{graphicx}
+\graphicspath{.}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{fancyhdr, lastpage, bbding, pmboxdraw, multicol, tabularx, calc}
+\usepackage{datetime}
+\usepackage{advdate}
+\usepackage[english]{isodate}
+\usepackage{longtable}
+\usepackage[colorlinks,pagebackref,pdfusetitle,urlcolor=blue,citecolor=blue,linkcolor=red,bookmarksnumbered,plainpages=false]{hyperref}
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+
+% Change font to Palatino
+\usepackage{fontspec}
+\setmainfont{Palatino}[Ligatures=TeX]
+
+%% Page Header
+\pagestyle{fancyplain}
+\fancyhf{}
+%%%%%% EDIT FOR EACH CLASS %%%%%
+\lhead{ \fancyplain{}{\coursenum} }
+%\chead{ \fancyplain{}{} }
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%% EDIT FOR EACH SEMESTER %%%%%
+\rhead{ \fancyplain{}{\semester} }
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\rfoot{\fancyplain{}{page \thepage\ of \pageref{LastPage}}}
+\fancyfoot[RO, LE] {page \thepage\ of \pageref{LastPage} }
+\thispagestyle{plain}
+
+%%%%%%%%%%%% LISTING %%%
+\usepackage{listings}
+\usepackage{caption}
+% \DeclareCaptionFont{white}{\color{white}}
+% \DeclareCaptionFormat{listing}{\colorbox{gray}{\parbox{\textwidth}{#1#2#3}}}
+% \captionsetup[lstlisting]{format=listing,labelfont=white,textfont=white}
+\usepackage{verbatim} % used to display code
+\usepackage{fancyvrb}
+\usepackage{acronym}
+\usepackage{amsthm}
+\VerbatimFootnotes % Required, otherwise verbatim does not work in footnotes!
+
+\definecolor{OliveGreen}{cmyk}{0.64,0,0.95,0.40}
+\definecolor{CadetBlue}{cmyk}{0.62,0.57,0.23,0}
+\definecolor{lightlightgray}{gray}{0.93}
+
+\lstset{
+	%language=bash,             % Code langugage
+	basicstyle=\ttfamily,          % Code font, Examples: \footnotesize, \ttfamily
+	keywordstyle=\color{OliveGreen},    % Keywords font ('*' = uppercase)
+	commentstyle=\color{gray},       % Comments font
+	numbers=left,              % Line nums position
+	numberstyle=\tiny,           % Line-numbers fonts
+	stepnumber=1,              % Step between two line-numbers
+	numbersep=5pt,             % How far are line-numbers from code
+	backgroundcolor=\color{lightlightgray}, % Choose background color
+	frame=none,               % A frame around the code
+	tabsize=2,               % Default tab size
+	captionpos=t,              % Caption-position = bottom
+	breaklines=true,            % Automatic line breaking?
+	breakatwhitespace=false,        % Automatic breaks only at whitespace?
+	showspaces=false,            % Dont make spaces visible
+	showtabs=false,             % Dont make tabls visible
+	columns=flexible,            % Column format
+	morekeywords={__global__, __device__}, % CUDA specific keywords
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+	\begin{center}
+		% small caps incompatible with Palatino, left for others
+		{\Large \textsc{\textbf{\coursenamelong}}}
+	\end{center}
+	\begin{center}
+		\textbf{Section 2, \semester: 3 credits} \\
+		Dept. of Biology, College of Arts and Sciences, University of Nebraska at Kearney
+	\end{center}
+	
+	%% Instructor and Class information %%
+	\begin{center}
+		\rule{6in}{0.4pt}
+		\begin{minipage}[t]{0.95\textwidth}
+			\begin{tabular}{llcccll}
+				\textbf{Classroom:} & \classroom & & & & \textbf{Time:} & \classdays: 13:25--14:15 \\
+				\textbf{Instructor:} & \profname & & & & \textbf{Email:} & \email \\
+				\textbf{Office hours:} & \classdays: 08:00--09:00 & & & & \textbf{Office:} & \office \\
+			\end{tabular}
+			\centering
+			Last updated: \today
+		\end{minipage}
+		\rule{6in}{0.4pt}
+	\end{center}
+	\vspace{.3cm}
+	\setlength{\unitlength}{1in}
+	\renewcommand{\arraystretch}{2}
+	
+	%%%%% Lecture times must be updated manually %%%%%
+	\noindent\textbf{Lecture meeting times and location:} \longdays: 13:25--14:15 (1:25 PM--2:15 PM) in \classroom\ (\buildingname).
+	
+	%%%%% Lecture times must be updated manually %%%%%
+	\skippers
+	\noindent\textbf{Instructor contact information:}\\
+	\textbf{\profname}, \proftitle, located in \office.\\ \textbf{Office hours} are on \classdays\ from 08:00--09:00. \\
+	\noindent\textbf{Contact:} \phone, \email, and through \canvas.
+	
+	\skippers
+	\noindent\textbf{Course website:} Course information is available via 
+	\canvas. Please check this site regularly. Mobile apps for Canvas are available for iOS and Android.
+	
+	\skippers
+	\noindent\textbf{Course description:} Type your description here.
+	
+	\skippers
+	\noindent\textbf{Prerequisites:} Prereqs here.
+	 
+	\skippers
+	\noindent\textbf{Instructional method:} Instructional method and information here.
+	
+	\skippers
+	\noindent\textbf{Student learning outcomes:} 
+	By the end of this course, students should be able to:
+	\vskip0.025in
+	1)	Do the things from this bulleted list.
+	
+	2)	Like this second item.
+	
+	\skippers
+	\noindent\textbf{Course Requirements:} Course requirements.
+	
+	\skippers
+	\noindent\textbf{\shortname's attendance policy:} Your attendance policy.
+	
+	\skippers
+	\noindent\textbf{Missed assignments, quizzes, exams, and make-up policy:} Your missing assignmnet policy.\\
+	 
+	 \skippers
+	 %%% THE FOLLOWING CODE ALLOWS FOR INSERTING IMAGES, SUCH AS FOR A BOOK %%%
+	% \noindent\textbf{Required materials:} Required materials here, like the example books (see figures \ref{fig:book1} and \ref{fig:book2}). 
+	
+	% Side by side figures - thanks StackExchange
+	% \begin{figure}
+	%	\begin{minipage}[c]{0.4\linewidth}
+	%		\centering
+	%		\includegraphics[width=0.5\linewidth]{book1.png}
+	%		\caption{\textit{Book 1} ISBN: 999999.}
+	%		\label{fig:book1}
+%		\end{minipage}
+%		\hfill
+%		\begin{minipage}[c]{0.4\linewidth}
+%			\centering
+%			\includegraphics[width=0.5\linewidth]{book2.png}
+%			\caption{\textit{Book 2} ISBN: 999999999.}
+%			\label{fig:book2}
+%		\end{minipage}
+%	\end{figure}
+	
+	\skippers
+	\noindent\textbf{Technology:} Tech requirements.
+	
+	%%% INFORMATION FOR UNK
+	\skippers
+	\noindent\textbf{Technical support:} \\
+	\textbf{LoperTECH Service Desk:} Phone: \href{tel:13088658363}{308-865-8363}; Email: \href{mailto:support@nebraska.edu}{support@nebraska.edu}\\
+	
+	\noindent If you are having problems or technical issues with \canvas, please contact ITS. Note that \canvas\ is most compatible with \href{https://www.mozilla.org/en-US/firefox/new/}{Firefox} or \href{https://www.google.com/chrome/}{Chrome}. If you are using Edge or Safari and having issues, please try one of the aforementioned browsers before reaching out to tech support.
+	
+	\skippers
+	\noindent\textbf{Grading policy:} Policy and grade breakdown here. See below for a tabular example.
+	
+	\vskip0.025in
+	\noindent\textit{Assigning letter grades at the end of the semester}: Grades in this class will be assigned according to the standard UNK scoring system described below. Only by attaining these percentages can you be assured of receiving a desired grade. 
+	
+	%%% UNK grading scale
+	\begin{center}
+		\begin{tabular}{| c | c | c |}
+			\hline
+			A+: 97--100\% & A: 94--96\% & A-: 90--93\%  \\
+			\hline
+			B+: 87--89\% & B: 84--86\% & B-: 80--83\%  \\
+			\hline
+			C+: 77--79\% & C: 74--76\% & C-: 70--73\%  \\
+			\hline
+			D+: 67--69\% & D: 64--66\% & D-: 60--63\%  \\
+			\hline
+			 & F: < 60\% & \\
+			 \hline
+		\end{tabular}
+	\end{center}
+	
+	\vskip0.025in
+	\noindent\textbf{Please note}: Grades will be rounded to the nearest whole percent. Thus, if your final grade is within 0.5\% of the next highest grade, your grade will be rounded up (e.g., an 89.50\% will be considered an “A-”). This is the definitive cutoff for rounding grades. There will be NO exceptions to this policy. 
+	
+	\skippers
+	\noindent\textbf{\shortname's policy on plagiarism and academic dishonesty:} Plagiarism policy here.
+	
+	\skippers
+	\noindent\textbf{The learning commons:} Learning Commons services are available in person and on Zoom for all online and on-campus UNK students. To request an appointment for subject tutoring, writing tutoring, success coaching, or foreign language support, please submit an \href{https://www.unk.edu/offices/learning_commons/index.php}{Appointment Request Form on the Learning Commons website}, call the Learning Commons Welcome Desk at \href{tel:13088658905}{308-865-8905}, or stop by the Welcome Desk in person on the second floor of the Calvin T. Ryan Library. To submit a draft of your writing for a tutor to review, go to the \href{https://www.unk.edu/offices/learning_commons/writing-center.php}{Writing Center webpage}).
+	
+	\skippers
+	\noindent\textbf{Acknowledgment and Copyright:} Copyright and attribution information here. The following statement is REQUIRED to attribute individuals correctly: Syllabus template based on that by Arman Shokrollahi (\href{https://creativecommons.org/licenses/by/4.0/deed.en}{CC BY 4.0}) and by James Quinlan (\href{https://github.com/aws/mit-0}{MIT License}), and (c) Jacob C. Cooper under an \href{https://github.com/aws/mit-0}{MIT License} via \href{https://github.com/jacobccooper/syllabus_template_UNK/tree/main}{GitHub}.
+
+	\skippers
+	\textbf{Please see university specific policies on the following page.}
+	\newpage
+	
+	%%% automatically insert university poilicies
+	%%% need these as a separate page
+	\include{university_policies_example.tex}
+	
+	\section*{Tentative course calendar}
+	
+	\noindent Below is an example schedule from a course at UNK. Note that the dates will automatically update for the semester after the first Monday is noted in the header of the LaTex document. Please note that this schedule may be subject to change. Assigned readings are noted for each topic. (Key: L = Lecture; \textcolor{magenta}{R\&C = Ruxton and Colegrave 2016 chapter number}; {\textcolor{cyan}{HHM = Havel, Hampton and Meiners 2019 chapter number}); \textcolor{Purple}{HW\# = Homework, Chapter \# in HHM when applicable}.
+	
+	% behind the scenes - set date
+	\SetDate[\startdate]
+	
+	%%% example calendar below from biostats.
+	
+	\begin{center}
+		\begin{longtable}{| c | c | c |}
+			\hline
+			\textbf{Week} & \textbf{Date} & \textbf{Topic} \\
+			\hline
+			\endhead
+			1 & \printyearoff\today & Week 1 \& Topic 1 \\
+			 & \printyearoff\AdvanceDate[2]\today & Wednesday \\
+			  & \printyearoff\AdvanceDate[4]\today & Friday \\
+			\hline
+			2 & \printyearoff\AdvanceDate[\fpeval{(7*1)+0}]\today & Week 2 \\
+			 & \printyearoff\AdvanceDate[\fpeval{(7*1)+2}]\today & See source code for formatting to auto-eval dates \\
+			  & \printyearoff\AdvanceDate[\fpeval{(7*1)+4}]\today & text here \\
+			\hline
+			3 & \printyearoff\AdvanceDate[\fpeval{(7*2)+0}]\today &  text here \\
+			& \printyearoff\AdvanceDate[\fpeval{(7*2)+2}]\today & text here \\
+			& \printyearoff\AdvanceDate[\fpeval{(7*2)+4}]\today & text here \\
+			\hline
+			4 & \printyearoff\AdvanceDate[\fpeval{(7*3)+0}]\today & text here \\
+			& \printyearoff\AdvanceDate[\fpeval{(7*3)+2}]\today & text here\\
+			& \printyearoff\AdvanceDate[\fpeval{(7*3)+4}]\today & text here \\
+			\hline
+			5 & \printyearoff\AdvanceDate[\fpeval{(7*4)+0}]\today & text here \\
+			& \printyearoff\AdvanceDate[\fpeval{(7*4)+2}]\today & text here \\
+			& \printyearoff\AdvanceDate[\fpeval{(7*4)+4}]\today & text here \\
+			\hline
+			6 & \printyearoff\AdvanceDate[\fpeval{(7*5)+0}]\today & text here \\
+			& \printyearoff\AdvanceDate[\fpeval{(7*5)+2}]\today & text here \\
+			& \printyearoff\AdvanceDate[\fpeval{(7*5)+4}]\today & text here\\
+			\hline
+			7 & \printyearoff\AdvanceDate[\fpeval{(7*6)+0}]\today & text here  \\
+			& \printyearoff\AdvanceDate[\fpeval{(7*6)+2}]\today & text here \\
+			& \printyearoff\AdvanceDate[\fpeval{(7*6)+4}]\today & text here \\
+			\hline
+			8 & \printyearoff\AdvanceDate[\fpeval{(7*7)+0}]\today & text here  \\
+			& \printyearoff\AdvanceDate[\fpeval{(7*7)+2}]\today & text here \\
+			& \printyearoff\AdvanceDate[\fpeval{(7*7)+4}]\today & text here \\
+			\hline
+			9 & \printyearoff\AdvanceDate[\fpeval{(7*8)+0}]\today & text here  \\
+			& \printyearoff\AdvanceDate[\fpeval{(7*8)+2}]\today & text here \\
+			& \printyearoff\AdvanceDate[\fpeval{(7*8)+4}]\today & text here \\
+			\hline
+			10 & \printyearoff\AdvanceDate[\fpeval{(7*9)+0}]\today & text here  \\
+			& \printyearoff\AdvanceDate[\fpeval{(7*9)+2}]\today & text here \\
+			& \printyearoff\AdvanceDate[\fpeval{(7*9)+4}]\today & text here \\
+			\hline
+			11 & \printyearoff\AdvanceDate[\fpeval{(7*10)+0}]\today & text here \\
+			& \printyearoff\AdvanceDate[\fpeval{(7*10)+2}]\today & text here \\
+			& \printyearoff\AdvanceDate[\fpeval{(7*10)+4}]\today & text here \\
+			\hline
+			12 & \printyearoff\AdvanceDate[\fpeval{(7*11)+0}]\today & text here \\
+			& \printyearoff\AdvanceDate[\fpeval{(7*11)+2}]\today & text here \\
+			& \printyearoff\AdvanceDate[\fpeval{(7*11)+4}]\today & text here \\
+			\hline
+			13 & \printyearoff\AdvanceDate[\fpeval{(7*12)+0}]\today & text here \\
+			& \printyearoff\AdvanceDate[\fpeval{(7*12)+2}]\today & text here \\
+			& \printyearoff\AdvanceDate[\fpeval{(7*12)+4}]\today & text here \\
+			\hline
+			14 & \printyearoff\AdvanceDate[\fpeval{(7*13)+0}]\today & text here \\
+			& \printyearoff\AdvanceDate[\fpeval{(7*13)+2}]\today & text here \\
+			& \printyearoff\AdvanceDate[\fpeval{(7*13)+4}]\today & text here \\
+			\hline
+			15 & \printyearoff\AdvanceDate[\fpeval{(7*14)+0}]\today & text here \\
+			& \printyearoff\AdvanceDate[\fpeval{(7*14)+2}]\today & text here \\
+			& \printyearoff\AdvanceDate[\fpeval{(7*14)+4}]\today & text here \\
+			\hline
+			16 & \printyearoff\AdvanceDate[\fpeval{(7*15)+0}]\today & text here \\
+			& \printyearoff\AdvanceDate[\fpeval{(7*15)+2}]\today & text here \\
+			& \printyearoff\AdvanceDate[\fpeval{(7*15)+4}]\today & text here \\
+			\hline
+			17 & \printyearoff\AdvanceDate[\fpeval{(7*16)+0}]\today & text here  \\
+			& \printyearoff\AdvanceDate[\fpeval{(7*16)+2}]\today & text here \\
+			& \printyearoff\AdvanceDate[\fpeval{(7*16)+4}]\today & text here \\
+			\hline
+		\end{longtable}
+		
+		\noindent\textbf{Note:} This schedule is subject to change pending events during the semester.
+	\end{center}
+	
+	%%%%%% THE END 
+\end{document} 
